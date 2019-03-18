@@ -38,17 +38,24 @@ S_SAM_3 = '646714';
 % number
 
 gs('load',6,1,T_EB_1)
-gs('cm',[60,70,60,70])
+%gs('cm',[60,70,60,70])
 gs('load',6,2,T_EB_2)
-gs('cm', [60,71,60,70])
-gs('load',6,3,T_EB_3)
-gs('cm', [60,71,60,70])
+%gs('cm', [60,71,60,70])
+gs('load',6,3,strcat(T_EB_3,',',T_EB_3))
+%gs('cm', [60,70,60,70])
 gs('axis_rescale')
 
 
 % Load H2O, Sample Transmission data into 'Transmission Sample' depth 1 and
 % depth 2
-% gs('load',4,3,1, T_H2O)
+gs('load',4,3, strcat(T_H2O,',',T_SAM))
+
+% Load EC Transmission data (EC and EB) into 'Transmission EC'
+gs('load',5,3, strcat(T_EC,',',T_EB_3))
+
+
+% load cadmium data into 'Blocked Beam'
+gs('load',3,3,strcat(T_CD,',',T_CD))
 
 
 % gs('display',6,1,0);

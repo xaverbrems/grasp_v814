@@ -1,0 +1,1 @@
+depth statusflags are numbered starting from 1, but corresponding data is addressed starting at 0?
