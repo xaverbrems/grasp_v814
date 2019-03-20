@@ -1,4 +1,9 @@
 %graspscript Test
+% T = Transmission, S = Scattering, EB = empty beam, CD = Cadmium, SAM =
+% sample, EC = empty cell (water), H2O = water, 1,2,3 = corresponding
+% geometry
+% fill in the numors of the corresponding data into the following variables
+
 
 %transmission data
 T_EB_1 = '646698';
@@ -25,8 +30,8 @@ S_EB_2  = '646705';
 S_SAM_2 = '646702';
 
 %scattering data Geo 3
-%S_H2O_3 = '646699';
-%S_EC_3  = '646700';
+% S_H2O_3 = ''; not measured in this geo
+% S_EC_3  = ''; not measured in this geo
 S_CD_3  = '646710';
 S_EB_3  = '646718';
 S_SAM_3 = '646714';
@@ -38,41 +43,24 @@ S_SAM_3 = '646714';
 % number
 
 gs('load',6,1,T_EB_1)
-%gs('cm',[60,70,60,70])
+gs('cm',[60,70,60,70])
 gs('load',6,2,T_EB_2)
-%gs('cm', [60,71,60,70])
-gs('load',6,3,strcat(T_EB_3,',',T_EB_3))
-%gs('cm', [60,70,60,70])
+gs('cm', [60,71,60,70])
+gs('load',6,3,strcat(T_EB_3))
+gs('cm', [60,70,60,70])
 gs('axis_rescale')
 
 
-% Load H2O, Sample Transmission data into 'Transmission Sample' depth 1 and
+% Load H2O and Sample Transmission data into 'Transmission Sample' depth 1 and
 % depth 2
 gs('load',4,3, strcat(T_H2O,',',T_SAM))
 
-% Load EC Transmission data (EC and EB) into 'Transmission EC'
+% Load EC Transmission data (EC for water and EB_3 for sample) into 'Transmission EC'
 gs('load',5,3, strcat(T_EC,',',T_EB_3))
 
 
 % load cadmium data into 'Blocked Beam'
-gs('load',3,3,strcat(T_CD,',',T_CD))
+gs('load',3,3,strcat(T_CD))
 
 
-% gs('display',6,1,0);
-% gs('display',6,2,0);
-% gs('display',6,3,0);
 
-
-% gs('display',6,1,0),
-% gs('axis_rescale'),
-% gs('cm')
-% % gs('cm',[60,71,60,70]),
-% gs('display',6,2,0),
-% gs('axis_rescale'),
-% % gs('cm',[60,72,60,70]),
-% gs('cm')
-% gs('display',6,3,0),
-% gs('axis_rescale'),
-% % gs('cm',[60,73,60,70]),
-% gs('cm')
-% gs('axis_rescale'),
