@@ -47,9 +47,9 @@ switch to_do
         
         if status_flags.analysis_modules.sector_boxes.t2t_lock_chk ==1 
             
-            %Modify coordinates according to san angle and reference san angle
+            %Modify coordinates according to omega_2b angle and reference omega_2b angle
             angle_ref = status_flags.analysis_modules.sector_boxes.(['t2t_lock_angle_ref' num2str(option)]);
-            angle_now = displayimage.params1.san;
+            angle_now = displayimage.params1.omega_2b;
             delta_2theta = 2*(angle_now - angle_ref); %This is the required angular shift of the box
             
             if coords(1) ~=0 && coords(2) ~=0
@@ -119,7 +119,7 @@ switch to_do
         end
         %Store reference wavelength in case of q-lock
         status_flags.analysis_modules.sector_boxes.q_lock_wav_ref = displayimage.params1.wav;
-        status_flags.analysis_modules.sector_boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.san;
+        status_flags.analysis_modules.sector_boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.omega_2b;
         
     case 'r2'
         box = get(gcbo,'userdata');
@@ -131,7 +131,7 @@ switch to_do
         end
         %Store reference wavelength in case of q-lock
         status_flags.analysis_modules.sector_boxes.q_lock_wav_ref = displayimage.params1.wav;
-        status_flags.analysis_modules.sector_boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.san;
+        status_flags.analysis_modules.sector_boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.omega_2b;
         
     case 'theta'
         box = get(gcbo,'userdata');
@@ -143,7 +143,7 @@ switch to_do
         end
         %Store reference wavelength in case of q-lock
         status_flags.analysis_modules.sector_boxes.q_lock_wav_ref = displayimage.params1.wav;
-        status_flags.analysis_modules.sector_boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.san;
+        status_flags.analysis_modules.sector_boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.omega_2b;
 
     case 'delta_theta'
         box = get(gcbo,'userdata');
@@ -155,7 +155,7 @@ switch to_do
         end
         %Store reference wavelength in case of q-lock
         status_flags.analysis_modules.sector_boxes.q_lock_wav_ref = displayimage.params1.wav;
-        status_flags.analysis_modules.sector_boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.san;
+        status_flags.analysis_modules.sector_boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.omega_2b;
         
     case 'gamma'
         box = get(gcbo,'userdata');
@@ -220,7 +220,7 @@ switch to_do
         end
         %Store reference wavelength in case of q-lock
         status_flags.analysis_modules.sector_boxes.q_lock_wav_ref = displayimage.params1.wav;
-        status_flags.analysis_modules.sector_boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.san;
+        status_flags.analysis_modules.sector_boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.omega_2b;
         
     case 'close'
         

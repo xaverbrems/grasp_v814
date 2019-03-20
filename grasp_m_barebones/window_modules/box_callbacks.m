@@ -80,9 +80,9 @@ switch to_do
         
         if status_flags.analysis_modules.boxes.t2t_lock_chk ==1
             
-            %Modify coordinates according to san angle and reference san angle
+            %Modify coordinates according to omega_2b angle and reference omega_2b angle
             angle_ref = status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' num2str(option)]);
-            angle_now = displayimage.params1.san;
+            angle_now = displayimage.params1.omega_2b;
             delta_2theta = 2*(angle_now - angle_ref); %This is the required angular shift of the box
             
             if coords(1) ~=0 && coords(2) ~=0
@@ -151,7 +151,7 @@ switch to_do
             status_flags.analysis_modules.boxes = setfield(status_flags.analysis_modules.boxes,['coords' boxno],coords);
         end
         status_flags.analysis_modules.boxes.q_lock_wav_ref = displayimage.params1.wav;
-        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' boxno]) = displayimage.params1.san;
+        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' boxno]) = displayimage.params1.omega_2b;
         box_callbacks('update_box_mask'); %Update box mask worksheet
         
     case 'x2'
@@ -164,7 +164,7 @@ switch to_do
             status_flags.analysis_modules.boxes = setfield(status_flags.analysis_modules.boxes,['coords' boxno],coords);
         end
         status_flags.analysis_modules.boxes.q_lock_wav_ref = displayimage.params1.wav;
-        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.san;
+        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.omega_2b;
         box_callbacks('update_box_mask'); %Update box mask worksheet
         
     case 'y1'
@@ -177,7 +177,7 @@ switch to_do
             status_flags.analysis_modules.boxes = setfield(status_flags.analysis_modules.boxes,['coords' boxno],coords);
         end
         status_flags.analysis_modules.boxes.q_lock_wav_ref = displayimage.params1.wav;
-        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.san;
+        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.omega_2b;
         box_callbacks('update_box_mask'); %Update box mask worksheet
         
     case 'y2'
@@ -190,7 +190,7 @@ switch to_do
             status_flags.analysis_modules.boxes = setfield(status_flags.analysis_modules.boxes,['coords' boxno],coords);
         end
         status_flags.analysis_modules.boxes.q_lock_wav_ref = displayimage.params1.wav;
-        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.san;
+        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.omega_2b;
         box_callbacks('update_box_mask'); %Update box mask worksheet
 
     case 'clear_box'
@@ -199,7 +199,7 @@ switch to_do
         coords =[0,0,0,0,1]; %Empty box coordinates.  5th coordinate is the detector number
         status_flags.analysis_modules.boxes = setfield(status_flags.analysis_modules.boxes,['coords' boxno],coords);
         status_flags.analysis_modules.boxes.q_lock_wav_ref = displayimage.params1.wav;
-        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.san;
+        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.params1.omega_2b;
         box_callbacks('update_box_mask'); %Update box mask worksheet
 
     case 'clear_all'
@@ -209,7 +209,7 @@ switch to_do
             status_flags.analysis_modules.boxes = setfield(status_flags.analysis_modules.boxes,['coords' boxno],coords);
         end
         status_flags.analysis_modules.boxes.q_lock_wav_ref = displayimage.params1.wav;
-        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' boxno]) = displayimage.params1.san;
+        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' boxno]) = displayimage.params1.omega_2b;
         box_callbacks('update_box_mask'); %Update box mask worksheet
         
     case 'parameter'
@@ -231,10 +231,10 @@ switch to_do
         ax_lims = ax_lims.(['det' detno]).pixels;
         status_flags.analysis_modules.boxes = setfield(status_flags.analysis_modules.boxes,['coords' num2str(box)],[ax_lims, det]);
         
-        %Keep a record of the scan-box reference SAN angle
-        status_flags.analysis_modules.boxes.scan_boxes_angle0(box) = displayimage.(['params' detno]).san;
+        %Keep a record of the scan-box reference omega_2b angle
+        status_flags.analysis_modules.boxes.scan_boxes_angle0(box) = displayimage.(['params' detno]).omega_2b;
         status_flags.analysis_modules.boxes.q_lock_wav_ref = displayimage.(['params' detno]).wav;
-        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.(['params' detno]).san;
+        status_flags.analysis_modules.boxes.(['t2t_lock_angle_ref' num2str(box)]) = displayimage.(['params' detno]).omega_2b;
         
         box_callbacks('update_box_mask'); %Update box mask worksheet
 
@@ -540,7 +540,7 @@ if not(strcmp(box_color,'(none)'));
 
         %Check if using a scanning box & transform coordinates
         if status_flags.analysis_modules.boxes.scan_boxes_check(box) ==1
-            angle_now = displayimage.params.san;
+            angle_now = displayimage.params.omega_2b;
             angle0 = status_flags.analysis_modules.boxes.scan_boxes_angle0(box);
             coords = dynamic_box_coords(coords,angle0, angle_now);
         end
