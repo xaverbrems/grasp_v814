@@ -88,8 +88,10 @@ while isempty(findstr(linestr,'%Counts'))
     if findstr(linestr,'Magnet='); a = findstr(linestr,'Magnet='); if a==1; l = length(linestr); param.field = str2double(linestr(findstr(linestr,'=')+1:l));end  ; end
 
     if findstr(linestr,'Position='); l = length(linestr); param.chpos = str2double(linestr(findstr(linestr,'=')+1:l)); end
+    %san, phi and chi was used instead of omega-2b, phi-2b and chi-2b to ensure compatibility with the other
+    %functions
     if findstr(linestr,'omega-2b='); l = length(linestr); param.san = str2double(linestr(findstr(linestr,'=')+1:l)); end
-    if findstr(linestr,'chi-2b='); l = length(linestr); param.chi_2b = str2double(linestr(findstr(linestr,'=')+1:l)); end
+    if findstr(linestr,'chi-2b='); l = length(linestr); param.chi = str2double(linestr(findstr(linestr,'=')+1:l)); end
     if findstr(linestr,'phi-2b='); l = length(linestr); param.phi = str2double(linestr(findstr(linestr,'=')+1:l)); end
     if findstr(linestr,'x-2b='); l = length(linestr); param.x_2b = str2double(linestr(findstr(linestr,'=')+1:l));  end
     if findstr(linestr,'y-2b='); l = length(linestr); param.y_2b = str2double(linestr(findstr(linestr,'=')+1:l));    end
