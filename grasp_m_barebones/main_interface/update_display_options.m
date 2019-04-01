@@ -38,7 +38,7 @@ set(grasp_handles.figure.pa_correction_chk,'value',status_flags.pa_correction.ca
     if status_flags.selector.fd == 1
         dpth = 1;
     else
-        dpth = status_flags.selector.fd - grasp_data(status_flags.selector.fw).sum_allow;
+        dpth = status_flags.selector.fd - grasp_data(data_index(status_flags.selector.fw)).sum_allow; %use data_index so the right worksheet index is used
     end
 %string = rot90(fieldnames(grasp_data(status_flags.selector.fw).params1{status_flags.selector.fn}{status_flags.selector.fd-grasp_data(status_flags.selector.fw).sum_allow}));
 index = data_index(status_flags.selector.fw);
