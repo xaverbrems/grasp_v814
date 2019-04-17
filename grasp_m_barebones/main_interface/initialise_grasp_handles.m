@@ -30,6 +30,7 @@ grasp_handles.window_modules.strips.sketch_handles = [];
 grasp_handles.window_modules.box.window = [];
 grasp_handles.window_modules.averaging_filters.window = [];
 grasp_handles.window_modules.xtraplot.window = [];
+grasp_handles.window_modules.bayes.window = [];
 
 grasp_handles.window_modules.box.sketch_handles = [];
 grasp_handles.window_modules.sector_box.window = [];

@@ -423,6 +423,9 @@ status_flags.user_modules.rheo_anisotropy.color = 'white';
 status_flags.user_modules.rheo_anisotropy.binning_Af = 2;
 status_flags.user_modules.rheo_anisotropy.parameter = 'numor';
 
+%bayes
+status_flags.user_modules.bayes.input_name = 'input_name';
+
 %Detector Efficiency Calculator
 status_flags.analysis_modules.det_eff.split_line = 45;
 status_flags.analysis_modules.det_eff.split_method = 1; %first on the dropdown list;
