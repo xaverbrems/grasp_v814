@@ -533,6 +533,11 @@ uimenu(grasp_handles.menu.user_modules.instrumentation,'label','TOF Calculator',
 uimenu(grasp_handles.menu.user_modules.instrumentation,'label','D33 Chopper Time-Distance Calculator','callback','d33_chopper_time_distance','enable',enable);
 uimenu(grasp_handles.menu.user_modules.instrumentation,'label','Beam Deflector-in-Guide Model','callback','deflector_transmission','enable',enable);
 
+%Bayes_Addon
+enable = 'on';
+uimenu(grasp_handles.menu.user_modules.root,'separator','off','label','Bayes','callback','bayes_window','enable',enable);
+
+
 
 %***** Grasp Script *****
 grasp_handles.menu.grasp_script.root = uimenu(figure_handle,'label','Grasp Script','tag','user_menu');
