@@ -21,6 +21,52 @@ switch to_do
             status_flags.user_modules.bayes.input_name = value;
         end
         
+    case 'input_index'
+        value = str2num(get(gcbo,'string'));
+        if not(isempty(value))
+            status_flags.user_modules.bayes.input_index = value;
+        end 
+        
+    case 'output_index'
+        value = str2num(get(gcbo,'string'));
+        if not(isempty(value))
+            status_flags.user_modules.bayes.output_index = value;
+        end
+        
+    case 'spot_x'
+        value = str2num(get(gcbo,'string'));
+        if not(isempty(value))
+            status_flags.user_modules.bayes.spot_x = value;
+        end
+        
+    case 'spot_y'
+        value = str2num(get(gcbo,'string'));
+        if not(isempty(value))
+            status_flags.user_modules.bayes.spot_y = value;
+        end 
+    case 'sanoffset'
+        value = str2num(get(gcbo,'string'));
+        if not(isempty(value))
+            status_flags.user_modules.bayes.sanoffset = value;
+        end
+        
+    case 'phioffset'
+        value = str2num(get(gcbo,'string'));
+        if not(isempty(value))
+            status_flags.user_modules.bayes.phioffset = value;
+        end
+        
+    case 'eta0'
+        value = str2num(get(gcbo,'string'));
+        if not(isempty(value))
+            status_flags.user_modules.bayes.eta0 = value;
+        end
+        
+    case 'rock_type'
+        rock_type_list = get(gcbo,'String');
+        value = get(gcbo,'Value');
+        status_flags.user_modules.bayes.rock_type = rock_type_list{value};     
+        
 end
 
 
