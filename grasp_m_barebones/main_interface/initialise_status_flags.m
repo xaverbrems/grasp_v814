@@ -433,6 +433,7 @@ status_flags.user_modules.bayes.eta0 = 0;
 status_flags.user_modules.bayes.sanoffset = 0;
 status_flags.user_modules.bayes.phioffset = 0;
 status_flags.user_modules.bayes.rock_type = 'san';
+status_flags.user_modules.bayes.boxing_type = 0;
 status_flags.user_modules.bayes.shape = 'g';
 status_flags.user_modules.bayes.reset = 1;
 status_flags.user_modules.bayes.norm = 'a';
@@ -441,6 +442,7 @@ status_flags.user_modules.bayes.intensity_sd_multiplier = 1;
 status_flags.user_modules.bayes.nonsensefactor = 1;
 status_flags.user_modules.bayes.informative_prior = 0;
 status_flags.user_modules.bayes.pixel_prior = 0;
+
 
 
 %Detector Efficiency Calculator
