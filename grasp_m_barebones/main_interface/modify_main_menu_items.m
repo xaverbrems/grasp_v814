@@ -540,6 +540,7 @@ uimenu(grasp_handles.menu.user_modules.root,'separator','off','label','Bayes','c
 
 
 %***** Grasp Script *****
+enable = 'on';
 grasp_handles.menu.grasp_script.root = uimenu(figure_handle,'label','Grasp Script','tag','user_menu');
 uimenu(grasp_handles.menu.grasp_script.root,'label','Run A Grasp Script','callback','gs(''run'')','enable',enable);
 uimenu(grasp_handles.menu.grasp_script.root,'label','Grasp Script Help','callback','gs(''help'');','enable',enable);
