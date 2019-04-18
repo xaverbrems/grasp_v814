@@ -247,6 +247,12 @@ if nargin<1; inst = []; end
 %#function fll_callbacks.m
 %#function fll_rapid_beam_centre_window.m
 
+%***** Bayes Stuff *****
+%#script run_Bayes.m
+%#classdef Bayesian_Rock_new.m
+%#function bayes_window.m
+%#function bayes_callbacks.m
+
 
 %***** Window Modules *****
 %#function ancos2_callbacks.m
