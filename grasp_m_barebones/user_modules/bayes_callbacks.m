@@ -65,7 +65,19 @@ switch to_do
     case 'rock_type'
         rock_type_list = get(gcbo,'String');
         value = get(gcbo,'Value');
-        status_flags.user_modules.bayes.rock_type = rock_type_list{value};     
+        status_flags.user_modules.bayes.rock_type = rock_type_list{value};
+        
+    case 'boxing_type'
+        boxing_type_list = get(gcbo,'String');
+        value = get(gcbo,'Value');
+        if value == 1;
+            status_flags.user_modules.bayes.boxing_type = 0;
+        else
+            status_flags.user_modules.bayes.boxing_type = boxing_type_list{value}; 
+        end
+        
+    case 'run_bayes'
+        run_Bayes;
         
 end
 

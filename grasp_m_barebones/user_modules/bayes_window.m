@@ -69,8 +69,22 @@ rock_type_list = {'san','phi'};
        end
    end
 uicontrol('units','normalized','Position',[0.053,0.15,0.4,0.08],'FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'HorizontalAlignment','left','Style','text','String','rock type:','BackgroundColor', grasp_env.background_color, 'ForegroundColor', [1 1 1]);
-grasp_handles.user_modules.bayes.rock_type = uicontrol('units','normalized','Position',[0.35,0.13,0.22,0.1],'HorizontalAlignment','center','FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'Style','Popup','Tag','rheo_anisotropy_colour',...
+grasp_handles.user_modules.bayes.rock_type = uicontrol('units','normalized','Position',[0.35,0.13,0.22,0.1],'HorizontalAlignment','center','FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'Style','Popup','Tag','rock_type',...
        'String',rock_type_list,'CallBack','bayes_callbacks(''rock_type'');','Value',value);
 
+   
+%boxing_type
+boxing_type_list = {'(none)','sectors','sector_boxes'};
+   for n = 1:length(boxing_type_list);
+       if strcmp(status_flags.user_modules.bayes.boxing_type,boxing_type_list{n})
+           value = n;
+       end
+   end
+uicontrol('units','normalized','Position',[0.053,0.05,0.4,0.08],'FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'HorizontalAlignment','left','Style','text','String','box type:','BackgroundColor', grasp_env.background_color, 'ForegroundColor', [1 1 1]);
+grasp_handles.user_modules.bayes.boxing_type = uicontrol('units','normalized','Position',[0.35,0.03,0.35,0.1],'HorizontalAlignment','center','FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'Style','Popup','Tag','boxing_type',...
+       'String',boxing_type_list,'CallBack','bayes_callbacks(''boxing_type'');','Value',value);   
+
+%run bayes   
+grasp_handles.user_modules.bayes.run_bayes_button = uicontrol(figure_handle,'units','normalized','Position',[0.05 0.00 0.5 0.07],'FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'Style','pushbutton','String','run_bayes!','HorizontalAlignment','Center','Tag','run_bayes_button','Visible','on','CallBack','bayes_callbacks(''run_bayes'');');
 
 bayes_callbacks;
