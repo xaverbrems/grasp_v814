@@ -76,6 +76,11 @@ switch to_do
             status_flags.user_modules.bayes.boxing_type = boxing_type_list{value}; 
         end
         
+    case 'shape'
+        shape_list = get(gcbo,'String');
+        value = get(gcbo,'Value');
+        status_flags.user_modules.bayes.shape = shape_list{value};
+        
     case 'run_bayes'
         run_Bayes;
         
