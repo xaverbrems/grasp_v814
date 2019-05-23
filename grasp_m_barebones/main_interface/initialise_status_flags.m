@@ -424,7 +424,7 @@ status_flags.user_modules.rheo_anisotropy.binning_Af = 2;
 status_flags.user_modules.rheo_anisotropy.parameter = 'numor';
 
 %bayes
-status_flags.user_modules.bayes.input_name = 'input_name';
+status_flags.user_modules.bayes.input_name = 'Label';
 status_flags.user_modules.bayes.input_index = 1;
 status_flags.user_modules.bayes.output_index = 1;
 status_flags.user_modules.bayes.spot_x = 20;
