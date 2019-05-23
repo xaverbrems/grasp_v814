@@ -79,7 +79,15 @@ switch to_do
     case 'shape'
         shape_list = get(gcbo,'String');
         value = get(gcbo,'Value');
-        status_flags.user_modules.bayes.shape = shape_list{value};
+        if strcmp(shape_list{value}, 'lorentzian')
+            status_flags.user_modules.bayes.shape = 'l'
+        elseif strcmp(shape_list{value}, 'gaussian')
+            status_flags.user_modules.bayes.shape = 'g'
+        end
+        
+    case 'nonsensefactor'
+        nonsensefactor = get(gcbo,'Value')
+        status_flags.user_modules.bayes.nonsensefactor = 1 - nonsensefactor ; % adapt so the slider is from left (=low) to right(=high)
         
     case 'run_bayes'
         run_Bayes;
