@@ -442,7 +442,14 @@ status_flags.user_modules.bayes.intensity_sd_multiplier = 1;
 status_flags.user_modules.bayes.nonsensefactor = 1;
 status_flags.user_modules.bayes.informative_prior = 0;
 status_flags.user_modules.bayes.pixel_prior = 0;
-
+status_flags.user_modules.bayes.results.sanoffset = 0;
+status_flags.user_modules.bayes.results.sanoffset_err = 0;
+status_flags.user_modules.bayes.results.phioffset = 0;
+status_flags.user_modules.bayes.results.phioffset_err = 0;
+status_flags.user_modules.bayes.results.eta_0 = 0;
+status_flags.user_modules.bayes.results.eta_0_err = 0;
+status_flags.user_modules.bayes.results.fwhm = 0;
+status_flags.user_modules.bayes.results.fwhm_err = 0;
 
 
 %Detector Efficiency Calculator
