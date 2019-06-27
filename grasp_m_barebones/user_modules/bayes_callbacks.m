@@ -93,7 +93,6 @@ switch to_do
         run_Bayes;
         
     case 'display_fit_results'
-        display('test print lorem ipsum');
         bayes_result_window;
         
 end
