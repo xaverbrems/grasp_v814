@@ -87,11 +87,12 @@ grasp_handles.user_modules.bayes.boxing_type = uicontrol('units','normalized','P
 
 %shape
 shape_list = {'gaussian','lorentzian'};
-   for n = 1:length(shape_list);
-       if strcmp(status_flags.user_modules.bayes.shape,shape_list{n})
-           value = n;
-       end
-   end
+if strcmp(status_flags.user_modules.bayes.shape, 'g')
+    value = 1;
+elseif strcmp(status_flags.user_modules.bayes.shape, 'l')
+    value = 2;
+end
+
 uicontrol('units','normalized','Position',[0.053,0.15,0.4,0.08],'FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'HorizontalAlignment','left','Style','text','String','shape:','BackgroundColor', grasp_env.background_color, 'ForegroundColor', [1 1 1]);
 grasp_handles.user_modules.bayes.shape = uicontrol('units','normalized','Position',[0.35,0.125,0.35,0.1],'HorizontalAlignment','center','FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'Style','Popup','Tag','shape',...
        'String',shape_list,'CallBack','bayes_callbacks(''shape'');','Value',value);    
