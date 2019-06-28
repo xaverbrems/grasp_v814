@@ -252,6 +252,7 @@ if nargin<1; inst = []; end
 %#function Bayesian_Rock_new.m
 %#function bayes_window.m
 %#function bayes_callbacks.m
+%#function bayes_result_window.m
 
 
 %***** Window Modules *****
