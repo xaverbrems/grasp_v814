@@ -290,11 +290,26 @@ if status_flags.display.refresh ==1
     else
         zscale_str = [displayimage.units];
     end
+    
+    
+    %For Bayes: set Z-axis according to normalization which was used, when Bayes was calculated and divide by Angstrom since Bayes works in q space
+    
+    if status_flags.selector.fw == 41 || status_flags.selector.fw == 42
+        
+        bayes_normalization = status_flags.user_modules.bayes.normalization;
+        zscale_str = ['Integrated Intensity / ' char(197) ' (normalization: ' bayes_normalization ')' ] % char(197) is Angstrom
+    elseif status_flags.selector.fw == 43     % Bayes weights are unitless
+        zscale_str = ' (unitless) '
+    end
+    
+    
+
+    
     set(h,'string',zscale_str,'rotation',270,'fontname',grasp_env.font,'fontsize',grasp_env.fontsize,'color',grasp_env.displayimage.active_axis_color);
     %Modify position of colorbar label
     pos = get(h,'position');
     pos(1) = 5.5;
-    pos(2) = (status_flags.display.z_max.det1 - status_flags.display.z_min.det1)/2;
+    pos(2) = (status_flags.display.z_max.det1 + status_flags.display.z_min.det1)/2; % changed minus to plus so the label is always in the midle of the colorbar
     set(h,'position',pos)
     
     
