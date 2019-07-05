@@ -95,6 +95,9 @@ switch to_do
     case 'display_fit_results'
         bayes_result_window;
         
+    case 'qztodegrees'
+        status_flags.user_modules.bayes.qztodegrees = not(status_flags.user_modules.bayes.qztodegrees)
+        
 end
 
 

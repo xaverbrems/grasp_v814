@@ -451,6 +451,8 @@ status_flags.user_modules.bayes.results.eta_0_err = 0;
 status_flags.user_modules.bayes.results.fwhm = 0;
 status_flags.user_modules.bayes.results.fwhm_err = 0;
 status_flags.user_modules.bayes.normalization = 'mon'
+status_flags.user_modules.bayes.qztodegrees = 0;
+status_flags.user_modules.bayes.qztodegrees_used = 0;
 
 
 %Detector Efficiency Calculator

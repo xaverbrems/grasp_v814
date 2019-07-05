@@ -295,9 +295,12 @@ if status_flags.display.refresh ==1
     %For Bayes: set Z-axis according to normalization which was used, when Bayes was calculated and divide by Angstrom since Bayes works in q space
     
     if status_flags.selector.fw == 41 || status_flags.selector.fw == 42
-        
         bayes_normalization = status_flags.user_modules.bayes.normalization;
-        zscale_str = ['Integrated Intensity / ' char(197) ' (normalization: ' bayes_normalization ')' ] % char(197) is Angstrom
+        if status_flags.user_modules.bayes.qztodegrees_used == 0      
+            zscale_str = ['Integrated Intensity / ' char(197) ' (normalization: ' bayes_normalization ')' ] % char(197) is Angstrom
+        elseif status_flags.user_modules.bayes.qztodegrees_used == 1
+            zscale_str = ['Integrated Intensity (normalization: ' bayes_normalization ')' ]
+        end
     elseif status_flags.selector.fw == 43     % Bayes weights are unitless
         zscale_str = ' (unitless) '
     end

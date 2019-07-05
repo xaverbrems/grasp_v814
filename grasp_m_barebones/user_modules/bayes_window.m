@@ -105,6 +105,11 @@ tooltip_string = ['set nonsensefactor: mask unmeasured regions' char(13) newline
 uicontrol('units','normalized','Position',[0.053,0.1,0.4,0.08],'FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'HorizontalAlignment','left','Style','text','String','Nonsensefactor:','BackgroundColor', grasp_env.background_color, 'ForegroundColor', [1 1 1]);
 grasp_handles.user_modules.bayes.nonsensefactor = uicontrol('units','normalized','Position',[0.35,0.15,0.35,0.03],'ToolTip',tooltip_string,'FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'Style','slider','Tag','nonsense_slider', 'CallBack','bayes_callbacks(''nonsensefactor'');','Value',nonsensefactor);   
 
+%qztodegrees checkbox
+uicontrol(figure_handle,'units','normalized','Position',[0.053 0.05 0.4 0.08],'FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'HorizontalAlignment','left','Style','text','String','qz to degrees:','BackgroundColor', grasp_env.background_color, 'ForegroundColor', [1 1 1]);
+grasp_handles.user_modules.bayes.qztodegrees = uicontrol(figure_handle,'units','normalized','Position',[0.35 0.08 0.048 0.07],'FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'Style','checkbox','Tag','qz_to_degrees','BackgroundColor', grasp_env.background_color, 'ForegroundColor', [1,1,1],'value',status_flags.user_modules.bayes.qztodegrees,...
+       'callback','bayes_callbacks(''qztodegrees'');');
+   
    
 %run bayes   
 grasp_handles.user_modules.bayes.run_bayes_button = uicontrol(figure_handle,'units','normalized','Position',[0.05 0.02 0.5 0.07],'FontName',grasp_env.font,'FontSize',grasp_env.fontsize,'Style','pushbutton','String','run_bayes!','HorizontalAlignment','Center','Tag','run_bayes_button','Visible','on','CallBack','bayes_callbacks(''run_bayes'');');
